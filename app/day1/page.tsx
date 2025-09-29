@@ -7,6 +7,10 @@ export default function Day1() {
     { name: "Preeti", college: "Lovely Institute", year: "3rd Year" },
     { name: "Yanwi", college: "Parul University", year: "2nd Year" },
     { name: "Sweta", college: "C V Raman ", year: "1st Year" },
+    { name: "Anjali", college: "IIT Bombay", year: "4th Year" },
+    { name: "Riya", college: "MIT Pune", year: "3rd Year" },
+    { name: "Sonal", college: "IIT Delhi", year: "2nd Year" },
+    { name: "Nikita", college: "IIT Madras", year: "1st Year" },
   ];
 
   return (
