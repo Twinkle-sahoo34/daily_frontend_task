@@ -13,12 +13,18 @@ export default function Day3() {
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-3xl px-6 py-2 rounded-lg text-fuchsia-300 bg-white hover:bg-amber-50 transition font-bold">Counter: {count}</h1>
         <div className="flex gap-4">
-          <button
-            onClick={() => setCount(count - 0)}
-            className="px-6 py-2 rounded-lg bg-indigo-400 hover:bg-red-400 transition font-bold"
-          >
-            ➖ Decrease
-          </button>
+            <button
+  onClick={() => setCount(prev => (prev > 0 ? prev - 1 : 0))}
+  disabled={count === 0}
+  className={`px-6 py-2 rounded-lg font-bold transition 
+    ${count === 0 
+      ? "bg-indigo-300  hover:bg-red-400 " 
+      : "bg-indigo-400 hover:bg-red-400"}`}
+>
+  ➖ Decrease
+</button>
+
+
           <button
             onClick={() => setCount(count + 1)}
             className="px-6 py-2 rounded-lg bg-pink-500 hover:bg-indigo-300 transition font-bold"
