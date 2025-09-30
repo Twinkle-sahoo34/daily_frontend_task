@@ -14,7 +14,7 @@ export default function Day3() {
         <h1 className="text-3xl px-6 py-2 rounded-lg text-fuchsia-300 bg-white hover:bg-amber-50 transition font-bold">Counter: {count}</h1>
         <div className="flex gap-4">
           <button
-            onClick={() => setCount(count - 1)}
+            onClick={() => setCount(count - 0)}
             className="px-6 py-2 rounded-lg bg-indigo-400 hover:bg-red-400 transition font-bold"
           >
             ➖ Decrease
