@@ -34,10 +34,10 @@ So,yeah here I'm building things learning,praticing,and Growing
 **Content:**
 -On Day 3 of the project, I built a fully interactive Todo List application using React, Next.js (App Router), Tailwind CSS, and client-side state management.
 *Features Implemented
-- Add Tasks
-:Created input fields to enter task name and completion status (0/1).
->Added a large, colorful Add button with gradient, hover effects, floating shadow, and smooth animations.
->On clicking Add, the task is added to the list dynamically.
+  - Add Tasks
+    >Created input fields to enter task name and completion status (0/1).
+    >Added a large, colorful Add button with gradient, hover effects, floating shadow, and smooth animations.
+    >On clicking Add, the task is added to the list dynamically.
 - Task Display
   >Each task is displayed as a card below the input section.
   >Completed tasks are green, while not completed tasks are red.
