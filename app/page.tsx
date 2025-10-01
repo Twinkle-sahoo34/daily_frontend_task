@@ -33,20 +33,22 @@ export default function Home() {
           Day-2 ✨
         </Link>
 {/* Day-3 Button (Floating Gradient with Shadow) */}
-<div className="flex flex-col items-center justify-center w-full flex-wrap gap-4 px-4">
+<div className="flex flex-col items-center justify-center w-full px-4 py-6 gap-4">
   {/* Day-3 Button */}
   <Link
     href="/day3"
-    className="w-full max-w-xs sm:w-64 px-4 sm:px-6 py-3 sm:py-3 text-base sm:text-lg font-bold text-white rounded-xl border-2 border-purple-400 
+    className="w-full sm:w-64 px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg font-bold text-white rounded-xl border-2 border-purple-400 
                bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md
                transition-all duration-300 ease-out
                hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500
-               hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]
-               flex justify-center hover:scale-105 text-center break-words"
+               hover:shadow-lg
+               flex justify-center items-center text-center break-words
+               hover:scale-100 sm:hover:scale-105"
   >
     Day-3 🌈
   </Link>
 </div>
+
 
 
 
