@@ -35,14 +35,16 @@ export default function Home() {
 {/* Day-3 Button (Floating Gradient with Shadow) */}
 <Link
   href="/day3"
-  className="w-64 px-6 py-3 text-lg font-bold text-white rounded-xl border-2 border-purple-400 
+  className="w-64 max-w-full px-6 py-3 text-lg sm:text-base xs:text-sm font-bold text-white rounded-xl border-2 border-purple-400 
              bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md
              transition-all duration-300 ease-out
              hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500
-             hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition flex justify-center hover:scale-105"
+             hover:shadow-[0_10px_30px_rgba(0,0,0,0.4)]
+             flex justify-center hover:scale-105"
 >
   Day-3 🌈
 </Link>
+
 
       </div>
     </div>
