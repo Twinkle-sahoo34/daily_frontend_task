@@ -29,6 +29,28 @@ So,yeah here I'm building things learning,praticing,and Growing
 - Practiced **React state management (useState)** and conditional rendering.
 --------
 
+*DAY-3
+-------
+**Content:**
+-On Day 3 of the project, I built a fully interactive Todo List application using React, Next.js (App Router), Tailwind CSS, and client-side state management.
+*Features Implemented
+- Add Tasks
+:Created input fields to enter task name and completion status (0/1).
+>Added a large, colorful Add button with gradient, hover effects, floating shadow, and smooth animations.
+>On clicking Add, the task is added to the list dynamically.
+- Task Display
+  >Each task is displayed as a card below the input section.
+  >Completed tasks are green, while not completed tasks are red.
+  >Smooth transition effects make the color change visually appealing.
+- Toggle Task Completion
+  >Clicking on a task card toggles its completion status (red ↔ green) with animation.
+- Delete Tasks
+  >Added a Delete button on each task card to remove tasks from the list.
+  >The Delete button has a gradient design with hover and scale effects.
+- Filter Tasks
+  >Implemented filter buttons to view All, Completed, or Not Completed tasks.
+  >The selected filter is highlighted with a different background and shadow effect.
+
 CONGRATS TO ME :)
 
 <B>SO YEAH WE WILL BE SOON DOING MASTERING IN THIS NEXT.JS AND REACT SO ALL THE BEST TO MEE YIPEEE!!!!!</B>
