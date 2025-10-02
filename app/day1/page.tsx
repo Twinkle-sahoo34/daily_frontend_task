@@ -1,7 +1,11 @@
-import Card from "../components/Card";
+"use client";
 
+import Card from "../components/Card";
+import { useRouter } from "next/navigation"; // ✅ Import router
 
 export default function Day1() {
+  const router = useRouter(); // ✅ Initialize router
+
   const students = [
     { name:  "Twinkle", college: "SOA University", year: "4th Year" },
     { name: "Preeti", college: "Lovely Institute", year: "3rd Year" },
@@ -16,9 +20,20 @@ export default function Day1() {
   ];
 
   return (
-    <div className="min-h-screen bg-black-100 p-6">
-      <h1 className="text-3xl font-bold text-white-800 text-center mb-6">🎓 Student Cards</h1>
-      <div className="flex flex-wrap justify-center">
+    <div className="relative min-h-screen bg-black p-6">
+      
+      {/* Back Button */}
+      <button
+        onClick={() => router.push("/")}
+        className="absolute top-4 left-4 px-4 py-2 rounded-xl font-semibold bg-blue-600 text-white shadow-lg
+                   hover:bg-blue-500 hover:shadow-xl transition-all duration-300 cursor-pointer"
+      >
+        🔙 Back
+      </button>
+
+      <h1 className="text-3xl font-bold text-white text-center mb-6">🎓 Student Cards</h1>
+      
+      <div className="flex flex-wrap justify-center gap-4">
         {students.map((student, index) => (
           <Card
             key={index}
