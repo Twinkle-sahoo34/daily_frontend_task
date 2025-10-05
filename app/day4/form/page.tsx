@@ -64,32 +64,33 @@ export default function FormPage() {
             placeholder="Age"
             value={formData.age}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-white/70 outline-none placeholder-gray-500"
+            className="w-full p-2 rounded bg-black/70 outline-none placeholder-black-500"
           />
           {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
 
           <div className="flex gap-4 items-center">
-            <label className="flex items-center gap-2">
-              <input
-                type="radio"
-                name="gender"
-                value="Male"
-                onChange={handleChange}
-                className="accent-pink-400"
-              />
-              Male
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="radio"
-                name="gender"
-                value="Female"
-                onChange={handleChange}
-                className="accent-pink-400"
-              />
-              Female
-            </label>
-          </div>
+  <label className="flex items-center gap-2 text-black">
+    <input
+      type="radio"
+      name="gender"
+      value="Male"
+      onChange={handleChange}
+      className="accent-pink-400"
+    />
+    Male
+  </label>
+  <label className="flex items-center gap-2 text-black">
+    <input
+      type="radio"
+      name="gender"
+      value="Female"
+      onChange={handleChange}
+      className="accent-pink-400"
+    />
+    Female
+  </label>
+</div>
+
           {errors.gender && <p className="text-red-500 text-sm">{errors.gender}</p>}
 
           <textarea
@@ -97,7 +98,7 @@ export default function FormPage() {
             placeholder="About You"
             value={formData.about}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-white/70 outline-none placeholder-gray-500"
+            className="w-full p-2 rounded bg-black/70 outline-none placeholder-black-500"
           />
 
           <input
@@ -122,7 +123,7 @@ export default function FormPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="w-full p-6 bg-white/80 backdrop-blur-md rounded-xl shadow-lg relative"
+            className="w-full p-6 bg-black/80 backdrop-blur-md rounded-xl shadow-lg relative"
           >
             <button
               onClick={handleClose}

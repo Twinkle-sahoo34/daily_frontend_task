@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function LandingPage() {
   return (
@@ -12,15 +13,16 @@ export default function LandingPage() {
       >
         Hello 👋
       </motion.h1>
-      
 
-      {/* Simple animated gif */}
-      <motion.img
-        src="https://media1.tenor.com/images/a07dda215321801bbcead56c2ecec527/tenor.gif?itemid=16334662"
-        alt="Animation"
-        className="w-64 md:w-80 rounded-2xl shadow-xl"
-        whileHover={{ scale: 1.05 }}
-      />
+      {/* Optimized Image */}
+      <motion.div whileHover={{ scale: 1.05 }} className="relative w-64 md:w-80 h-64 md:h-80">
+        <Image
+          src="https://media1.tenor.com/images/a07dda215321801bbcead56c2ecec527/tenor.gif?itemid=16334662"
+          alt="Animation"
+          fill
+          className="rounded-2xl shadow-xl object-cover"
+        />
+      </motion.div>
     </div>
   );
 }
