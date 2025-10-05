@@ -33,12 +33,10 @@ export default function Home() {
           Day-2 ✨
         </Link>
 
-        {/* Day-3 Button (Aligned like Day-2, Responsive) */}
-        {/* Day-3 Button (Floating Gradient with Border and Hover Effect) */}
-{/* Day-3 Button (Zooming Gradient Effect) */}
-<Link
-  href="/day3"
-  className="w-64 max-w-full px-6 py-3 text-lg font-bold text-white
+        {/* Day-3 Button */}
+        <Link
+          href="/day3"
+          className="w-64 max-w-full px-6 py-3 text-lg font-bold text-white
              bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
              border-4 border-purple-400 rounded-2xl
              shadow-md
@@ -46,11 +44,24 @@ export default function Home() {
              transition-transform transition-colors duration-300 ease-out
              hover:scale-105 hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500
              hover:shadow-lg"
->
-  Day-3 🌈
-</Link>
+        >
+          Day-3 🌈
+        </Link>
 
-
+        {/* 🌟 Day-4 Button (Elegant Aqua-Blue Gradient with Glow) */}
+        <Link
+          href="/day4"
+          className="w-64 max-w-full px-6 py-3 text-lg font-bold text-white
+             bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600
+             border-4 border-blue-400 rounded-2xl
+             shadow-md
+             flex justify-center items-center text-center
+             transition-transform transition-colors duration-300 ease-out
+             hover:scale-110 hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400
+             hover:shadow-[0_0_25px_#38bdf8]"
+        >
+          Day-4 💎
+        </Link>
       </div>
     </div>
   );
