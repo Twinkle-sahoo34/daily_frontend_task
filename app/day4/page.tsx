@@ -14,13 +14,17 @@ export default function LandingPage() {
         Hello 👋
       </motion.h1>
 
-      {/* Optimized Image */}
-      <motion.div whileHover={{ scale: 1.05 }} className="relative w-64 md:w-80 h-64 md:h-80">
+      {/* Animated GIF */}
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        className="relative w-64 md:w-80 h-64 md:h-80"
+      >
         <Image
           src="https://media1.tenor.com/images/a07dda215321801bbcead56c2ecec527/tenor.gif?itemid=16334662"
           alt="Animation"
           fill
           className="rounded-2xl shadow-xl object-cover"
+          priority // optional: makes it load faster
         />
       </motion.div>
     </div>
