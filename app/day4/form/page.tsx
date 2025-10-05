@@ -29,27 +29,22 @@ export default function FormPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
-    if (Object.keys(validationErrors).length === 0) {
-      setSubmitted(true);
-    } else {
-      setSubmitted(false);
-    }
     setErrors(validationErrors);
+    setSubmitted(Object.keys(validationErrors).length === 0);
   };
 
   const handleClose = () => setSubmitted(false);
 
   return (
-    <div className="flex items-center justify-center min-h-screen
-                    bg-[rgba(200,225,255,0.15)] p-6">
+    <div className="flex items-center justify-center min-h-screen bg-[rgba(200,225,255,0.15)] p-4 md:p-6">
       <div className="flex flex-col items-center w-full max-w-md space-y-6">
-        <h2 className="text-2xl font-semibold mb-2 text-pink-600 text-center">User Information Form</h2>
+        <h2 className="text-2xl font-semibold text-pink-600 text-center">User Information Form</h2>
 
         <form
-          className="w-full space-y-4 bg-[rgba(255,255,255,0.25)] backdrop-blur-lg
-                     rounded-3xl p-8 shadow-lg"
           onSubmit={handleSubmit}
+          className="w-full space-y-4 bg-[rgba(255,255,255,0.25)] backdrop-blur-lg rounded-3xl p-6 md:p-8 shadow-lg"
         >
+          {/* Name */}
           <input
             name="name"
             placeholder="Name"
@@ -59,58 +54,63 @@ export default function FormPage() {
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
+          {/* Age */}
           <input
             name="age"
             placeholder="Age"
+            type="number"
             value={formData.age}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-black/70 outline-none placeholder-black-500"
+            className="w-full p-2 rounded bg-black/70 text-white outline-none placeholder-black/50"
           />
           {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
 
+          {/* Gender */}
           <div className="flex gap-4 items-center">
-  <label className="flex items-center gap-2 text-black">
-    <input
-      type="radio"
-      name="gender"
-      value="Male"
-      onChange={handleChange}
-      className="accent-pink-400"
-    />
-    Male
-  </label>
-  <label className="flex items-center gap-2 text-black">
-    <input
-      type="radio"
-      name="gender"
-      value="Female"
-      onChange={handleChange}
-      className="accent-pink-400"
-    />
-    Female
-  </label>
-</div>
-
+            <label className="flex items-center gap-2 text-black">
+              <input
+                type="radio"
+                name="gender"
+                value="Male"
+                onChange={handleChange}
+                className="accent-pink-400"
+              />
+              Male
+            </label>
+            <label className="flex items-center gap-2 text-black">
+              <input
+                type="radio"
+                name="gender"
+                value="Female"
+                onChange={handleChange}
+                className="accent-pink-400"
+              />
+              Female
+            </label>
+          </div>
           {errors.gender && <p className="text-red-500 text-sm">{errors.gender}</p>}
 
+          {/* About */}
           <textarea
             name="about"
             placeholder="About You"
             value={formData.about}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-black/70 outline-none placeholder-black-500"
+            className="w-full p-2 rounded bg-black/70 text-white outline-none placeholder-black/50"
           />
 
+          {/* Email */}
           <input
             name="email"
-            placeholder="Email"
             type="email"
+            placeholder="Email"
             value={formData.email}
             onChange={handleChange}
             className="w-full p-2 rounded bg-white/70 outline-none placeholder-gray-500"
           />
           {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-300 transition"
@@ -119,11 +119,12 @@ export default function FormPage() {
           </button>
         </form>
 
+        {/* Submitted Data */}
         {submitted && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="w-full p-6 bg-black/80 backdrop-blur-md rounded-xl shadow-lg relative"
+            className="w-full p-6 bg-black/80 text-white backdrop-blur-md rounded-xl shadow-lg relative"
           >
             <button
               onClick={handleClose}
@@ -131,7 +132,6 @@ export default function FormPage() {
             >
               ×
             </button>
-
             <h3 className="text-lg font-bold mb-3 text-center text-pink-500">Submitted Data</h3>
             <p><strong>Name:</strong> {formData.name}</p>
             <p><strong>Age:</strong> {formData.age}</p>

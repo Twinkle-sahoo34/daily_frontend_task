@@ -7,19 +7,18 @@ export default function Day4Layout({ children }: { children: React.ReactNode }) 
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start
-                    bg-blue-100 p-6">
+    <div className="min-h-screen flex flex-col items-center justify-start bg-blue-100 p-4 md:p-6">
       {/* Navbar */}
-      <nav className="flex items-center justify-between w-full max-w-5xl px-8 py-4
-                      bg-blue-200/50 backdrop-blur-md rounded-2xl
-                      border border-blue-300 shadow-md mb-8">
-        <h1 className="text-2xl font-bold tracking-wide text-pink-600">🌟 Day 4</h1>
-        <div className="flex gap-6">
+      <nav className="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl px-4 md:px-8 py-4
+                      bg-blue-200/50 backdrop-blur-md rounded-2xl border border-blue-300 shadow-md mb-8">
+        <h1 className="text-2xl font-bold tracking-wide text-pink-600 mb-2 md:mb-0">🌟 Day 4</h1>
+        <div className="flex flex-col md:flex-row gap-3 md:gap-6">
           <Link
             href="/day4"
             className={`text-lg font-medium hover:text-pink-400 ${
               pathname === "/day4" ? "text-pink-500" : "text-blue-700"
             }`}
+            aria-current={pathname === "/day4" ? "page" : undefined}
           >
             Home
           </Link>
@@ -28,6 +27,7 @@ export default function Day4Layout({ children }: { children: React.ReactNode }) 
             className={`text-lg font-medium hover:text-blue-500 ${
               pathname === "/day4/form" ? "text-pink-500" : "text-blue-700"
             }`}
+            aria-current={pathname === "/day4/form" ? "page" : undefined}
           >
             Form
           </Link>
