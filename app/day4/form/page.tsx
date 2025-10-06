@@ -20,7 +20,7 @@ export default function FormPage() {
   };
 
   const validate = () => {
-    let tempErrors: { [key: string]: string } = {};
+    const tempErrors: { [key: string]: string } = {};
     if (!formData.name) tempErrors.name = "Name is required";
     if (!formData.age || isNaN(Number(formData.age)))
       tempErrors.age = "Valid age is required";
@@ -49,7 +49,6 @@ export default function FormPage() {
           onSubmit={handleSubmit}
           className="w-full space-y-4 bg-[rgba(255,255,255,0.25)] backdrop-blur-lg rounded-3xl p-6 md:p-8 shadow-lg"
         >
-          {/* Name */}
           <input
             name="name"
             placeholder="Name"
@@ -59,18 +58,16 @@ export default function FormPage() {
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
-          {/* Age */}
           <input
             name="age"
             placeholder="Age"
-            type="text" // changed from number to text to remove spinner
+            type="text"
             value={formData.age}
             onChange={handleChange}
             className="w-full p-2 rounded bg-white text-black  outline-none placeholder-gray-500"
           />
           {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
 
-          {/* Gender */}
           <div className="flex gap-4 items-center">
             <label className="flex items-center gap-2 text-black">
               <input
@@ -95,7 +92,6 @@ export default function FormPage() {
           </div>
           {errors.gender && <p className="text-red-500 text-sm">{errors.gender}</p>}
 
-          {/* About */}
           <textarea
             name="about"
             placeholder="About You"
@@ -104,7 +100,6 @@ export default function FormPage() {
             className="w-full p-2 rounded bg-white text-black  outline-none placeholder-gray-500"
           />
 
-          {/* Email */}
           <input
             name="email"
             type="email"
@@ -115,7 +110,6 @@ export default function FormPage() {
           />
           {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-300 transition"
@@ -124,7 +118,6 @@ export default function FormPage() {
           </button>
         </form>
 
-        {/* Submitted Data */}
         {submitted && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
