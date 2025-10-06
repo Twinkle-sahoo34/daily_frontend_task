@@ -13,14 +13,17 @@ export default function FormPage() {
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const validate = () => {
     let tempErrors: { [key: string]: string } = {};
     if (!formData.name) tempErrors.name = "Name is required";
-    if (!formData.age || isNaN(Number(formData.age))) tempErrors.age = "Valid age is required";
+    if (!formData.age || isNaN(Number(formData.age)))
+      tempErrors.age = "Valid age is required";
     if (!formData.gender) tempErrors.gender = "Please select gender";
     if (!formData.email.includes("@")) tempErrors.email = "Valid email required";
     return tempErrors;
@@ -38,7 +41,9 @@ export default function FormPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-[rgba(200,225,255,0.15)] p-4 md:p-6">
       <div className="flex flex-col items-center w-full max-w-md space-y-6">
-        <h2 className="text-2xl font-semibold text-pink-600 text-center">User Information Form</h2>
+        <h2 className="text-2xl font-semibold text-pink-600 text-center">
+          User Information Form
+        </h2>
 
         <form
           onSubmit={handleSubmit}
@@ -50,7 +55,7 @@ export default function FormPage() {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-white/70 outline-none placeholder-gray-500"
+            className="w-full p-2 rounded bg-white/70 text-black  outline-none placeholder-gray-500"
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
@@ -58,10 +63,10 @@ export default function FormPage() {
           <input
             name="age"
             placeholder="Age"
-            type="number"
+            type="text" // changed from number to text to remove spinner
             value={formData.age}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-black/70 text-white outline-none placeholder-black/50"
+            className="w-full p-2 rounded bg-white text-black  outline-none placeholder-gray-500"
           />
           {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
 
@@ -96,7 +101,7 @@ export default function FormPage() {
             placeholder="About You"
             value={formData.about}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-black/70 text-white outline-none placeholder-black/50"
+            className="w-full p-2 rounded bg-white text-black  outline-none placeholder-gray-500"
           />
 
           {/* Email */}
@@ -106,7 +111,7 @@ export default function FormPage() {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 rounded bg-white/70 outline-none placeholder-gray-500"
+            className="w-full p-2 rounded bg-white/70 text-black  outline-none placeholder-gray-500"
           />
           {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
@@ -132,12 +137,24 @@ export default function FormPage() {
             >
               ×
             </button>
-            <h3 className="text-lg font-bold mb-3 text-center text-pink-500">Submitted Data</h3>
-            <p><strong>Name:</strong> {formData.name}</p>
-            <p><strong>Age:</strong> {formData.age}</p>
-            <p><strong>Gender:</strong> {formData.gender}</p>
-            <p><strong>About:</strong> {formData.about}</p>
-            <p><strong>Email:</strong> {formData.email}</p>
+            <h3 className="text-lg font-bold mb-3 text-center text-pink-500">
+              Submitted Data
+            </h3>
+            <p>
+              <strong>Name:</strong> {formData.name}
+            </p>
+            <p>
+              <strong>Age:</strong> {formData.age}
+            </p>
+            <p>
+              <strong>Gender:</strong> {formData.gender}
+            </p>
+            <p>
+              <strong>About:</strong> {formData.about}
+            </p>
+            <p>
+              <strong>Email:</strong> {formData.email}
+            </p>
           </motion.div>
         )}
       </div>
