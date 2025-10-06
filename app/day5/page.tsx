@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image"; // ✅ Import Image
 import { motion } from "framer-motion";
 import { Sun, Moon, Shuffle, Home } from "lucide-react";
 
@@ -20,7 +21,6 @@ export default function Day5() {
   ]);
   const [gridStyle, setGridStyle] = useState("grid-cols-3");
 
-  // Only change grid style without shuffling images
   const changeGrid = () => {
     const grids = ["grid-cols-2", "grid-cols-3", "grid-cols-4"];
     const randomGrid = grids[Math.floor(Math.random() * grids.length)];
@@ -35,9 +35,7 @@ export default function Day5() {
           : "bg-gradient-to-br from-[#e0f2ff] via-[#f0f9ff] to-[#e0e7ff] text-gray-900"
       } flex flex-col items-center justify-start py-8 px-6`}
     >
-      {/* Header with buttons */}
       <div className="w-full flex justify-between items-center mb-10">
-        {/* Home Button */}
         <Link
           href="/"
           className="p-3 rounded-2xl backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 shadow-md transition"
@@ -49,7 +47,6 @@ export default function Day5() {
           🖼️ Image Portfolio
         </h1>
 
-        {/* Mode Toggle */}
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="p-3 rounded-2xl backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 shadow-md transition"
@@ -58,7 +55,6 @@ export default function Day5() {
         </button>
       </div>
 
-      {/* Shuffle Button (Grid Change) */}
       <motion.button
         whileTap={{ scale: 0.9 }}
         onClick={changeGrid}
@@ -73,7 +69,6 @@ export default function Day5() {
         Change Grid
       </motion.button>
 
-      {/* Image Grid */}
       <motion.div
         layout
         className={`grid ${gridStyle} gap-6 w-full max-w-6xl transition-all duration-700`}
@@ -90,9 +85,11 @@ export default function Day5() {
                 : "bg-white/70 border-gray-200 hover:shadow-[0_0_25px_rgba(0,0,0,0.15)]"
             }`}
           >
-            <img
-              src={src}
+            <Image
+              src={src} // ✅ Use Image
               alt={`Image ${index + 1}`}
+              width={500} // Set proper width
+              height={500} // Set proper height
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
           </motion.div>
